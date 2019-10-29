@@ -246,7 +246,6 @@ def GA(popsize,numgens):
         fitL = []
         for i in range(len(L)):
             fitL += [L[i][0]]
-        #assert len(fitL) == popsize
         avg = sum(fitL)/popsize
         print("Average Fitness:", avg)
         print("Best Fitness:", max(fitL))
@@ -254,7 +253,6 @@ def GA(popsize,numgens):
         progL = []
         for i in range(len(SL)):
             progL += [SL[i][1]]
-            #print(progL)
         newL = progL[-1:-(int(popsize*PARENT)+2):-1]
         #xL = []
         while len(newL) < popsize:
@@ -268,11 +266,7 @@ def GA(popsize,numgens):
                     pass
                 else:
                     newL[z].mutate()
-        #print(newL+xL)
-        #print(len(newL+xL))
         p = newL
-        #print(max(L))
-        #best = max(L)[1]
 
     print("The best Picobot program is:")
     return best
